@@ -15,7 +15,7 @@
       (throw (Exception. (str "HTTP Response status is " (:code status) " from " (:url response)))))))
 
 (defn get-string-response
-  ([url] (get-json-response-as-map url nil))
+  ([url] (get-string-response url nil))
   ([url cookies]
     (with-open [client (c/create-client)]
       (let [response-data (-> (c/GET client url :cookies cookies)
