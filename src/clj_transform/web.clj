@@ -11,6 +11,7 @@
   (GET "/osm/:left/:bottom/:right/:top" 
        [left bottom right top] 
        (json-str (core/get-osm-data left bottom right top)))
+  (route/not-found (json-str {:error "not found"}))
   )
 
 (def app
