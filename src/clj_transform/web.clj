@@ -10,12 +10,12 @@
 
 
 (defroutes app-routes
-  (GET "/" [] (resp/file-response "index.html" {:root "static"}))
+  (GET "/" [] (resp/file-response "index.html" {:root "resources"}))
   (GET "/osm/:left/:bottom/:right/:top" 
        [left bottom right top] 
        (json-str (core/get-osm-data left bottom right top)))
+  (route/files "/" {:root "resources"})
   (route/not-found (json-str {:error "not found"}))
-  (route/files "/" {:root "static"})
   )
 
 (def app
