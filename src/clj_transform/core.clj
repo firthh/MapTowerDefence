@@ -15,7 +15,9 @@
  ))
 
 (defn get-osm-data [left bottom right top]
-  (-> (str "http://api.openstreetmap.org/api/0.6/map?bbox=" left "," bottom "," right "," top)
+  (->> (str "http://api.openstreetmap.org/api/0.6/map?bbox=" left "," bottom "," right "," top)
       http/get-string-response
-      x-to-j) 
+      x-to-j
+      :content
+      (group-by :tag)) 
 )

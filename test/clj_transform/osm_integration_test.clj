@@ -12,8 +12,8 @@
 
 (facts "get-osm-data"
   (let [data (get-osm-data 151 -27.001 151.001 -27)]
-    (fact "root element is osm"
-      (:tag data) => :osm)
-    (fact "there are more than one thing in content"
-      (> (count (:content data)) 1) => true)
+    (fact "there is more than one node"
+          (> (count (:node data)) 1) => true)
+    (fact "there are more than one type of elements"
+          (> (count data) 1) => true)
     ))
