@@ -3,7 +3,8 @@
   (:require [compojure.handler :as handler]
             [compojure.route :as route]
             [clojure.data.json :refer (read-json json-str)]
-            [clj-transform.core :as core])
+            [clj-transform.core :as core]
+            [ring.adapter.jetty :as jetty])
 )
 
 
@@ -22,3 +23,6 @@
 
 (defn destroy []
   (println "Stopping App"))
+
+(defn -main [port]
+  (jetty/run-jetty app {:port (Integer. port) :join? false}))

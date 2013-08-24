@@ -1,1 +1,1 @@
-web: lein ring server-headless
+web: java $JVM_OPTS -cp target/helloworld-standalone.jar clojure.main -m clj-transform.web $PORT

@@ -9,6 +9,7 @@
                  [http.async.client "0.5.2"]]
   :plugins [[lein-ring "0.8.5"]]
   :min-lein-version "2.0.0"
+  :uberjar-name "map-td-transform.jar"
   :ring {:handler clj-transform.web/app
          :init    clj-transform.web/init
          :destroy clj-transform.web/destroy}
