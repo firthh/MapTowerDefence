@@ -2,12 +2,15 @@
   (:use compojure.core)
   (:require [compojure.handler :as handler]
             [compojure.route :as route]
-            [clojure.data.json :refer (read-json json-str)])
+            [clojure.data.json :refer (read-json json-str)]
+            [clj-transform.core :as core])
 )
 
 
 (defroutes app-routes
-  (GET "/test" [] (json-str {:test "test"}))
+  (GET "/osm/:left/:bottom/:right/:top" 
+       [left bottom right top] 
+       (json-str (core/get-osm-data left bottom right top)))
   )
 
 (def app
