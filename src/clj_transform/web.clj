@@ -18,3 +18,5 @@
 (def app
   (handler/site app-routes))
 
+(defn -main [port]
+  (jetty/run-jetty app {:port (Integer. port) :join? false}))
