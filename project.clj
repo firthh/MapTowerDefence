@@ -8,6 +8,7 @@
                  [org.clojure/data.json "0.2.2"]
                  [http.async.client "0.5.2"]]
   :plugins [[lein-ring "0.8.5"]]
+  :min-lein-version "2.0.0"
   :ring {:handler clj-transform.web/app
          :init    clj-transform.web/init
          :destroy clj-transform.web/destroy}
