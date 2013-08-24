@@ -10,12 +10,10 @@
   :plugins [[lein-ring "0.8.5"]]
   :min-lein-version "2.0.0"
   :uberjar-name "map-td-transform.jar"
-  :ring {:handler clj-transform.web/app
-         :init    clj-transform.web/init
-         :destroy clj-transform.web/destroy}
+  :ring {:handler clj-transform.web/app}
   :profiles {:dev {
                    :plugins [[lein-midje "3.0.0"]
                              [lein-ancient "0.4.0"]]
-                   :dependencies [[midje "1.6-alpha2"]
-                                  [ring-mock "0.1.5"]]}
+                   :dependencies [[midje "1.5.1"]
+                                  ]}
              })

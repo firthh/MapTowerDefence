@@ -18,11 +18,6 @@
 (def app
   (handler/site app-routes))
 
-(defn init []
-  (println "Starting App"))
-
-(defn destroy []
-  (println "Stopping App"))
 
 (defn -main [port]
   (jetty/run-jetty app {:port (Integer. port) :join? false}))
