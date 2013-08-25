@@ -25,5 +25,5 @@ $(function() {
 
 	var rectangle = paper.rect(x0, y0, width, length);
 
-	//rectangle.transform("r270");
+	//need to workout how to transform the rectangle now
 });
