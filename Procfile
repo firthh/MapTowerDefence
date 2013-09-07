@@ -1,1 +1,1 @@
-web: lein ring server $PORT
+web: java -jar target/map-td-transform.jar $PORT

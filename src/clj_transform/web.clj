@@ -6,6 +6,7 @@
             [clj-transform.core :as core]
             [ring.util.response :as resp]
             [ring.adapter.jetty :as jetty])
+  (:gen-class)
 )
 
 
@@ -21,5 +22,7 @@
 (def app
   (handler/site app-routes))
 
-(defn -main [port]
-  (jetty/run-jetty app {:port (Integer. port) :join? false}))
+(defn -main
+  ([] (-main 80))
+  ([port]
+      (jetty/run-jetty app {:port (Integer. port) :join? false})))
