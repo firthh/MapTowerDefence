@@ -8,6 +8,6 @@ describe("A suite", function() {
 
 describe("distance", function() {
     it("should work from the origin", function() {
-	expect(distance(0,0,1,2)).toEqual(3);
+	expect(distance(0,0,3,4)).toEqual(5);
     });
 });

@@ -3,7 +3,7 @@ function distance(x0, y0, x1, y1) {
     var dx = Math.abs(x0 - x1);
     var dy = Math.abs(y0 - y1);
     
-    return Math.sqrt((dx * dx) + (dy * dy))
+    return Math.sqrt((dx * dx) + (dy * dy));
 }
 
 
