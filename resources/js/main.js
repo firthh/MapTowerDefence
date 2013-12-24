@@ -8,7 +8,7 @@ function distance(x0, y0, x1, y1) {
 
 
 $(function() {
-	// Creates canvas 320 × 200 at 10, 50
+
     var paper = Raphael(150, 80, 800, 800);
     var zero = paper.rect(0, 0, 5, 5);
     //fixed width for lines
